@@ -108,7 +108,7 @@ perspective(n) 	为 3D 转换元素定义透视视图。
   }
 }
 .xxxxbox{
-	width:50%; margin:0 auto; background:# CCC; text-align:center; opacity: 0.5;
+	
 }
 .xxxx{
   -webkit-animation-duration: 3s;  		animation-duration: 3s; 
@@ -116,6 +116,37 @@ perspective(n) 	为 3D 转换元素定义透视视图。
   /* [ 定义动画什么时候开始, 等待(0.5)秒，然后开始动画] , 前面为firefox,chrome,  Safari 的写法,  后面是常见的写法*/
   -webkit-animation-delay: 0.5s;	  	animation-delay: 0.5s;
 }
+@-webkit-keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+}
+/**************************/
+
+
+
 
 @-webkit-keyframes fadeInUp {
   0% {
@@ -185,7 +216,7 @@ p.fadeInUp {
     <div class="container">
       <h2 class="wow fadeInUp animated">实战课程重磅上线</h2>
       <p class="wow fadeInUp animated">一键云学习，还在等待什么？</p>
-      <div class="xxxxbox" style="width:50%; margin:0 auto; background:#fff; text-align:center; opacity: 1;">
+      <div class="xxxxbox" style="width:50%; margin:0 auto; background:#fff; text-align:center; opacity: 0.2;">
       	<img class="wow xxxx animated" src="images/page2_2.png" width="200" />
       </div>
     </div>
@@ -198,8 +229,8 @@ p.fadeInUp {
     <div class="container">
       <h2 class="wow fadeInUp animated">实战课程重磅上线</h2>
       <p class="wow fadeInUp animated">一键云学习，还在等待什么？</p>
-      <div class="xxxxbox" style="width:50%; margin:0 auto; background:#fff; text-align:center; opacity: 1;">
-      	<img class="wow xxxx animated" src="images/page2_2.png" width="200" />
+      <div class="xxxxbox" style="width:50%; margin:0 auto; background:#fff; text-align:center; opacity: 0.2;">
+      	<img class="wow xxxx zoomIn animated" src="images/page2_2.png" width="200" />
       </div>
     </div>
   </div>
