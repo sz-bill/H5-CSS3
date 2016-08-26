@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>test</title>
+</head>
+<style type="text/css">
+.id-clean{clear:both; line-height:1px;}
+
+.page3 {
+  background-color: #93C;
+  width:50%;
+  margin:0 auto;
+  height:300px;
+  padding:10px;
+  border:10px solid #666;
+}
+.page3 .icon-2 li {
+  float: left;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 58px;
+  margin:10px 20px 0 20px;
+  list-style:none;
+}
+.page3 .icon-3-1 {
+  border: 4px solid #1f5975;
+  color: #02b0ff;
+}
+.page3 .icon-3-2 {
+  border: 4px solid #424d76;
+  color: #7888fd;
+}
+.page3 .icon-3-3 {
+  border: 4px solid #6b4146;
+  color: #ff6060;
+}
+.page3 .icon-3-4 {
+  border: 4px solid #29535f;
+  color: #22c7e5;
+}
+.page3 .icon-3-5 {
+  border: 4px solid #3e4e40;
+  color: #90bd56;
+}
+/****************/
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide 
+	控制li动画部分样式
+*/
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+}
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide 
+	控制li动画部分样式
+*/
+</style>
+<body>
+<div class="page3">
+    <ul class="icon-2">
+      <li style="visibility: visible; animation-duration: 1s; animation-delay: 0.5s; animation-iteration-count: infinite; animation-name: pulse;" class="icon-3-1 wow pulse animated" >HTML5</li>
+      <li style="visibility: visible; animation-duration: 1s; animation-delay: 1s; animation-iteration-count: infinite; animation-name: pulse;" class="icon-3-2 wow pulse animated" >PHP</li>
+      <li style="visibility: visible; animation-duration: 1s; animation-delay: 1.5s; animation-iteration-count: infinite; animation-name: pulse;" class="icon-3-3 wow pulse animated" >JAVA</li>
+      <li style="visibility: visible; animation-duration: 1s; animation-delay: 2s; animation-iteration-count: infinite; animation-name: pulse;" class="icon-3-4 wow pulse animated" >Python</li>
+      <li style="visibility: visible; animation-duration: 1s; animation-delay: 2.5s; animation-iteration-count: infinite; animation-name: pulse;" class="icon-3-5 wow pulse animated">Node.js</li>
+    </ul>
+<div class="id-clean"></div>
+</div>
+</body>
+</html>
