@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>animated ---  延迟显示内容</title>
+<meta name="keywords" content="animated,实战课程,慕课实战,MOOC实战,移动实战,php实战,web前端实战,html5实战课程,java实战,python实战">
+<meta name="description" content="看视频,敲代码,一气呵成。结合慕课网为你提供的云端学习工具,所见即所得。从此学习不一样">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=10,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<script type="text/javascript" src="js/wow.js"></script>
+<style type="text/css">
+.idclean {
+	clear: both;
+	line-height: 1px;
+	margin: 30px 0;
+}
+/*
+* 初始化要做动画的元素
+*/
+.animated {
+	-webkit-animation-duration: .3s;
+	animation-duration: .3s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+
+
+/****************************/
+@-webkit-keyframes fadeIn {
+  /*  num%  从开始的时间标 */
+  0% {
+    opacity: 0;
+  }
+  /*  num%  从结束的时间标 */
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  visibility: visible; 
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s; 
+}
+
+/****************************/
+/*
+Transform属性 应用于元素的2D或3D转换。这个属性允许你将元素旋转，缩放，移动，倾斜等。
+none 	定义不进行转换。
+matrix(n,n,n,n,n,n) 	定义 2D 转换，使用六个值的矩阵。
+matrix3d(n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n) 	定义 3D 转换，使用 16 个值的 4x4 矩阵。
+translate(x,y) 	定义 2D 转换。
+translate3d(x,y,z) 	定义 3D 转换。
+translateX(x) 	定义转换，只是用 X 轴的值。
+translateY(y) 	定义转换，只是用 Y 轴的值。
+translateZ(z) 	定义 3D 转换，只是用 Z 轴的值。
+scale(x[,y]?) 	定义 2D 缩放转换。
+scale3d(x,y,z) 	定义 3D 缩放转换。
+scaleX(x) 		通过设置 X 轴的值来定义缩放转换。
+scaleY(y) 		通过设置 Y 轴的值来定义缩放转换。
+scaleZ(z) 		通过设置 Z 轴的值来定义 3D 缩放转换。
+rotate(angle) 	定义 2D 旋转，在参数中规定角度。
+rotate3d(x,y,z,angle) 	定义 3D 旋转。
+rotateX(angle) 	定义沿着 X 轴的 3D 旋转。 	测试
+rotateY(angle) 	定义沿着 Y 轴的 3D 旋转。
+rotateZ(angle) 	定义沿着 Z 轴的 3D 旋转。
+skew(x-angle,y-angle) 	定义沿着 X 和 Y 轴的 2D 倾斜转换。
+skewX(angle) 	定义沿着 X 轴的 2D 倾斜转换。
+skewY(angle) 	定义沿着 Y 轴的 2D 倾斜转换。
+perspective(n) 	为 3D 转换元素定义透视视图。
+*/
+@keyframes xxxx {
+  0% {opacity: 0;
+	transform:rotate(1000deg);
+	-ms-transform:rotate(1000deg); /* IE 9 */
+	-webkit-transform:rotate(1000deg); /* Safari and Chrome */  }
+
+  100% {opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@-webkit-keyframes xxxx {
+  0% {opacity: 0; width:10px;
+	transform:rotate(1000deg);
+	-ms-transform:rotate(1000deg); /* IE 9 */
+	-webkit-transform:rotate(1000deg); /* Safari and Chrome */  }
+  }
+
+  100% {opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+.xxxxbox{
+	width:50%; margin:0 auto; background:# CCC; text-align:center; opacity: 0.5;
+}
+.xxxx{
+  -webkit-animation-duration: 3s;  		animation-duration: 3s; 
+  -webkit-animation-name: xxxx;  	animation-name: xxxx;
+  /* [ 定义动画什么时候开始, 等待(0.5)秒，然后开始动画] , 前面为firefox,chrome,  Safari 的写法,  后面是常见的写法*/
+  -webkit-animation-delay: 0.5s;	  	animation-delay: 0.5s;
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+h2.fadeInUp {
+  /*[ 在 html 里面写的东西默认情况下就是属于 visibility:visible; 即元素可见。当某些情况下，你让元素不可见了：visibility:hidden; 再通过一些事件触发后让元素变成可见，就要用到这个visibility:visible; 。 ]*/
+  visibility: visible; 
+  
+  /**[ 定义动画完成一个周期需要多少秒或毫 ] ,  前面为firefox,chrome,  Safari 的写法,  后面是常见的写法 */
+  -webkit-animation-duration: 1s;  		animation-duration: 1s; 
+  
+  /*[ 为 @keyframes 动画指定一个名称, (fadeInUp) 可以定行定义， 必须保持 CSS 类名 和  @keyframes 是一样的 如下写法] ,  前面为firefox,chrome,  Safari 的写法,  后面是常见的写法
+  	@keyframes  aaaaa{}		动画名称
+	.aaaaa{}				类名
+  */
+  -webkit-animation-name: fadeInUp;  	animation-name: fadeInUp;
+}
+p.fadeInUp {
+  visibility: visible; 
+  -webkit-animation-duration: 1s;  		animation-duration: 1s; 
+  -webkit-animation-name: fadeInUp;  	animation-name: fadeInUp;
+  /* [ 定义动画什么时候开始, 等待(0.5)秒，然后开始动画] , 前面为firefox,chrome,  Safari 的写法,  后面是常见的写法*/
+  -webkit-animation-delay: 0.5s;	  	animation-delay: 0.5s;
+}
+/****************************/
+/****************************/
+
+.section {
+	width: 50%;
+	margin: 10px auto;
+	background:url(images/page1.jpg) 100%;
+}
+.container {
+	color:#0CF;
+}
+</style>
+</head>
+<body>
+<div class="section"> 
+  <!-------------------------------BOF PART OF 1-->
+  <div class="wow fadeIn animated">
+    <div class="container">
+      <h2 class="wow fadeInUp animated">实战课程重磅上线</h2>
+      <p class="wow fadeInUp animated">一键云学习，还在等待什么？</p>
+      <div class="xxxxbox" style="width:50%; margin:0 auto; background:#fff; text-align:center; opacity: 1;">
+      	<img class="wow xxxx animated" src="images/page2_2.png" width="200" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section"> 
+  <!-------------------------------BOF PART OF 1-->
+  <div class="wow fadeIn animated">
+    <div class="container">
+      <h2 class="wow fadeInUp animated">实战课程重磅上线</h2>
+      <p class="wow fadeInUp animated">一键云学习，还在等待什么？</p>
+      <div class="xxxxbox" style="width:50%; margin:0 auto; background:#fff; text-align:center; opacity: 1;">
+      	<img class="wow xxxx animated" src="images/page2_2.png" width="200" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section"> 
+  <!-------------------------------BOF PART OF 1-->
+  <div class="wow fadeIn animated">
+    <div class="container">
+      <h2 class="wow fadeInUp animated">实战课程重磅上线</h2>
+      <p class="wow fadeInUp animated">一键云学习，还在等待什么？</p>
+      <div class="xxxxbox" style="width:50%; margin:0 auto; background:#fff; text-align:center; opacity: 1;">
+      	<img class="wow xxxx animated" src="images/page2_2.png" width="200" />
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="section"> 
+  <!-------------------------------BOF PART OF 1-->
+  <div class="wow fadeIn animated">
+    <div class="container">
+      <h2 class="wow fadeInUp animated">实战课程重磅上线</h2>
+      <p class="wow fadeInUp animated">一键云学习，还在等待什么？</p>
+      <div class="xxxxbox" style="width:50%; margin:0 auto; background:#fff; text-align:center; opacity: 1;">
+      	<img class="wow xxxx animated" src="images/page2_2.png" width="200" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+//延迟显示重要组成部分
+(function (){
+	wow = new WOW({
+	  boxClass:     'wow',      // default
+	  animateClass: 'animated', // default
+	  offset:       0,          // default
+	  mobile:       true,       // default
+	  live:         true        // default
+	})
+	wow.init();
+	
+})()
+</script>
+</body>
+</html>
