@@ -11,41 +11,55 @@
 <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta http-equiv="Access-Control-Allow-Origin" content="*">
 <style type="text/css">
-.animated {
-	visibility: visible;    /*元素是否可见*/
-	animation-name: abcdef; /*元素使用的动画名称[@keyframes abcdef], 需要提前定义*/
-	-webkit-animation-duration: 1.5s;/*动画播放时间长度 firefox*/
-	animation-duration: 1.5s;/*动画播放时间长度*/
-	animation-delay: .3s;/*延迟播放动画的时间*/
-	max-width:480px;/*元素的最大宽度*/
+ 
+
+<!-------------------------------第二部分 BOF-->
+
+@-webkit-keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
 
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
 
-@keyframes abcdef {
-	0% {
-	 opacity: 0;
-	 -webkit-transform: scale(0.01); /*指定动画效果名称[scale]*/
-	 transform: scale(0.01);/*指定动画效果名称[scale]*/
-	}
-	100% {
-	 opacity: 1;
-	 -webkit-transform: scale(1);/*指定动画效果名称[scale]*/
-	 transform: scale(1);/*指定动画效果名称[scale]*/
-	 
-	}
+  50% {
+    opacity: 1;
+  }
 }
-.common {
-	width: 50%;
-	margin: 10px auto;
-	border:1px solid #ccc;
+
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
 }
+.icon-1 {
+  left: 130px;
+  width: 100%;
+  height: 100%;
+  
+  background-repeat: no-repeat;
+  background-image: url(images/page3_1.png);
+  background-position: left center;
+}
+<!-------------------------------第二部分 EOF-->
 </style>
 </head>
 <body>
-<div class="common">
-  <img src="http://coding.imooc.com/static/module/index/img/banner01.jpg" class="animated">
+<div style="background:#0C9; padding:10px; border:3px solid #999; width:50%; height:350px; margin:10px auto;">
+<!--第二部分 BOF-->
+  <div style="visibility: visible; animation-duration: 1s; animation-name: zoomIn;" class="icon-1 zoomIn animated"></div>
+<!--第二部分 EOF-->
 </div>
-
-
 </body>
 </html>
